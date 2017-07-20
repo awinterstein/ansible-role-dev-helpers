@@ -30,8 +30,9 @@
     - cmake-gui
     - cmake-curses-gui
   become: true
-- name: Install Ninja
+- name: Install additional tools
   apt: name={{item}} state=installed
   with_items:
     - ninja-build
+    - exuberant-ctags
   become: true
