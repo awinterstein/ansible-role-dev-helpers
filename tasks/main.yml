@@ -35,4 +35,6 @@
   with_items:
     - ninja-build
     - exuberant-ctags
+    - valgrind
+    - clang-format
   become: true
