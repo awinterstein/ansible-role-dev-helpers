@@ -19,3 +19,8 @@
   with_items:
     - kdevelop
   become: true
+- name: Deactivate network notifications by default
+  copy:
+    src: networkmanagement.notifyrc
+    dest: "{{homedir}}/.config/networkmanagement.notifyrc"
+    force: no
