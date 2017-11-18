@@ -14,11 +14,6 @@
     - valgrind
     - clang-format
   become: true
-- name: Install KDevelop
-  apt: name={{item}} state=installed
-  with_items:
-    - kdevelop
-  become: true
 - name: Deactivate network notifications by default
   copy:
     src: networkmanagement.notifyrc
