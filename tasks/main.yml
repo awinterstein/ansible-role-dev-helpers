@@ -19,3 +19,4 @@
     src: networkmanagement.notifyrc
     dest: "{{homedir}}/.config/networkmanagement.notifyrc"
     force: no
+  when: desktop_environment is defined and desktop_environment == "KDE"
