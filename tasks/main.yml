@@ -1,4 +1,11 @@
 ---
+- name: Install compilers
+  apt: name={{item}} state=installed
+  with_items:
+    - gcc
+    - g++
+  become: true
+
 - name: Install CMake
   apt: name={{item}} state=installed
   with_items:
