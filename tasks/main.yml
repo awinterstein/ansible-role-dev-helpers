@@ -1,26 +1,22 @@
 ---
 - name: Install compilers
-  apt: name={{item}} state=installed
-  with_items:
-    - gcc
-    - g++
+  apt:
+    name: ['gcc', 'g++']
+    state: present
   become: true
 
 - name: Install CMake
-  apt: name={{item}} state=installed
-  with_items:
-    - cmake
-    - cmake-gui
-    - cmake-curses-gui
+  apt:
+    name: ['cmake', 'cmake-gui', 'cmake-curses-gui']
+    state: present
   become: true
+
 - name: Install additional tools
-  apt: name={{item}} state=installed
-  with_items:
-    - ninja-build
-    - exuberant-ctags
-    - valgrind
-    - clang-format
+  apt:
+    name: ['ninja-build', 'exuberant-ctags', 'valgrind', 'clang-format']
+    state: present
   become: true
+
 - name: Deactivate network notifications by default
   copy:
     src: networkmanagement.notifyrc
